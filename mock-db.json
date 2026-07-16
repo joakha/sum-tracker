@@ -86,34 +86,6 @@
           "date": "2026-09-10"
         }
       ]
-    },
-    {
-      "id": 5,
-      "title": "Entertainment",
-      "total": 1200,
-      "year": 2026,
-      "expenses": [
-        {
-          "name": "Movie Tickets",
-          "value": 120,
-          "date": "2026-01-21"
-        },
-        {
-          "name": "Streaming Subscription",
-          "value": 85,
-          "date": "2026-02-16"
-        },
-        {
-          "name": "Concert Tickets",
-          "value": 210,
-          "date": "2026-04-30"
-        },
-        {
-          "name": "Gaming Purchase",
-          "value": 95,
-          "date": "2026-06-18"
-        }
-      ]
     }
   ]
 }

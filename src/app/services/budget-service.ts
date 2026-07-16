@@ -16,6 +16,10 @@ export class BudgetService {
     return this.client.get<Budget[]>(this.api_url);
   }
 
+  deleteBudget(budgetId: number){
+    return this.client.delete(`${this.api_url}/${budgetId}`);
+  }
+
   // rxResource = rxResource({
   //   loader : () => this.http.get(this.base_url)
   // })
@@ -31,8 +35,5 @@ export class BudgetService {
   putDataById(id : number, data: Iuser){
     return this.http.put(`${this.base_url}/${id}`,data);
   }
-
-  deleteData(id: number){
-    return this.http.delete(`${this.base_url}/${id}`);
-  } */
+   */
 }
