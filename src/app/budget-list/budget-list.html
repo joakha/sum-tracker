@@ -23,6 +23,10 @@
       </div>
 
       <div>
+        <button type="button" (click)="editBudget(budget.id)">Update</button>
+      </div>
+
+      <div>
         <app-delete-button [budget]="budget" (deleteBudgetEmitter)="deleteBudget($event)"></app-delete-button>
       </div>
     </div>

@@ -1,7 +1,8 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { BudgetService } from '../services/budget-service';
 import type { Budget } from '../types';
 import { DeleteButton } from '../delete-button/delete-button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-budget-list',
@@ -11,6 +12,7 @@ import { DeleteButton } from '../delete-button/delete-button';
 })
 
 export class BudgetList implements OnInit {
+  private router = inject(Router);
 
   constructor(private budgetService: BudgetService) { }
 
@@ -20,6 +22,10 @@ export class BudgetList implements OnInit {
     this.budgetService.fetchBudgets().subscribe(res => {
       this.budgets.set(res)
     })
+  }
+
+  editBudget(budgetId: number) {
+    this.router.navigate(['edit-budget', budgetId]);
   }
 
   deleteBudget(budget: Budget) {

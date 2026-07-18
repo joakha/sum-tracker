@@ -4,22 +4,22 @@
       "id": 1,
       "title": "Household Budget",
       "total": 5000,
-      "year": 2026,
+      "year": 2024,
       "expenses": [
         {
           "name": "Monthly Rent",
           "value": 1200,
-          "date": "2026-01-05"
+          "month": null
         },
         {
           "name": "Grocery Shopping",
           "value": 450,
-          "date": "2026-02-14"
+          "month": null
         },
         {
           "name": "Utility Bills",
           "value": 320,
-          "date": "2026-03-08"
+          "month": null
         }
       ]
     },

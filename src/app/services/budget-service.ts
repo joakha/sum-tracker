@@ -8,35 +8,27 @@ import type { Budget } from '../types';
 
 export class BudgetService {
 
-  api_url : string = "http://localhost:3000/Budgets";
+  api_url: string = "http://localhost:3000/Budgets";
 
   constructor(private client: HttpClient) { }
 
-  fetchBudgets(){
-    return this.client.get<Budget[]>(this.api_url);
-  }
-
-  createBudget(budget : Budget){
+  createBudget(budget: Budget) {
     return this.client.post(this.api_url, budget);
   }
 
-  deleteBudget(budgetId: number){
+  fetchBudgets() {
+    return this.client.get<Budget[]>(this.api_url);
+  }
+
+  fetchBudget(budgetId: number) {
+    return this.client.get<Budget>(`${this.api_url}/${budgetId}`);
+  }
+
+  editBudget(budgetId: number, updatedBudget: Budget) {
+    return this.client.put(`${this.api_url}/${budgetId}`, updatedBudget);
+  }
+
+  deleteBudget(budgetId: number) {
     return this.client.delete(`${this.api_url}/${budgetId}`);
   }
-
-
-  // rxResource = rxResource({
-  //   loader : () => this.http.get(this.base_url)
-  // })
-
-/*   
-
-  getDataById(id : number){
-    return this.http.get<Iuser>(`${this.base_url}/${id}`);
-  }
-
-  putDataById(id : number, data: Iuser){
-    return this.http.put(`${this.base_url}/${id}`,data);
-  }
-   */
 }

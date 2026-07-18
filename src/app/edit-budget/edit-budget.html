@@ -1,7 +1,7 @@
 <div>
     <form [formGroup]="budgetForm" (ngSubmit)="submitForm()">
 
-        <h2>Create a New Budget</h2>
+        <h2>Edit Budget</h2>
 
         <div class="flex flex-col">
             <label>Title</label>
@@ -36,7 +36,7 @@
 
         <button type="submit">Submit</button>
 
-        <button type="button" (click)="resetForm()">Reset</button>
+        <button type="button" (click)="cancelForm()">Cancel</button>
 
     </form>
 </div>
