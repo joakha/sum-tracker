@@ -1,10 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BudgetList } from './budget-list/budget-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BudgetList],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

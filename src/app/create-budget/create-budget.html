@@ -1,0 +1,42 @@
+<div>
+    <form [formGroup]="budgetForm" (ngSubmit)="submitForm()">
+
+        <h2>Create a New Budget</h2>
+
+        <div class="flex flex-col">
+            <label>Title</label>
+            <input type="text" placeholder="Enter first name" formControlName="title">
+        </div>
+
+        <div class="flex flex-col">
+            <label>Total</label>
+            <input type="number" placeholder="Enter first name" formControlName="total">
+        </div>
+
+        <div class="flex flex-col">
+            <label>Year</label>
+            <input type="number" placeholder="Enter first name" formControlName="year">
+        </div>
+
+<div formArrayName="expenses">
+  <button type="button" (click)="addExpense()">Add expense</button>
+
+  @for (expense of expenses.controls; track expense) {
+    <div [formGroupName]="$index">
+      <input type="text" formControlName="name" placeholder="Name">
+
+      <input type="text" formControlName="value" placeholder="Amount">
+
+      <input type="text" formControlName="month" placeholder="Month">
+
+      <button type="button" (click)="deleteExpense($index)">Delete</button>
+    </div>
+  }
+</div>
+
+        <button type="submit">Submit</button>
+
+        <button type="button" (click)="resetForm()">Reset</button>
+
+    </form>
+</div>

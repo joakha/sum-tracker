@@ -9,7 +9,7 @@ type Budget = {
 type Expense = {
     name: string,
     value: number,
-    date: string
+    month: string
 }
 
 export type {
