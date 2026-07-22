@@ -1,42 +1,72 @@
-<div>
-    <form [formGroup]="budgetForm" (ngSubmit)="submitForm()">
+<div class="flex-1 container mx-auto py-12">
+    <form class="flex flex-col gap-6 rounded-xl bg-amber-200 p-6 shadow-xl" [formGroup]="budgetForm"
+        (ngSubmit)="submitForm()">
+        <h2 class="text-2xl font-semibold text-gray-900">
+            Create a New Budget
+        </h2>
 
-        <h2>Edit Budget</h2>
-
-        <div class="flex flex-col">
-            <label>Title</label>
-            <input type="text" placeholder="Enter first name" formControlName="title">
+        <div class="flex flex-col gap-2">
+            <label class="font-medium text-gray-700">Title</label>
+            <input type="text" placeholder="Enter budget title" formControlName="title"
+                class="rounded-lg border-2 border-gray-300 bg-white px-4 py-2 outline-none focus:border-amber-500" />
         </div>
 
-        <div class="flex flex-col">
-            <label>Total</label>
-            <input type="number" placeholder="Enter first name" formControlName="total">
+        <div class="flex flex-col gap-2">
+            <label class="font-medium text-gray-700">Total</label>
+            <input type="number" placeholder="Enter total budget" formControlName="total"
+                class="rounded-lg border-2 border-gray-300 bg-white px-4 py-2 outline-none focus:border-amber-500" />
         </div>
 
-        <div class="flex flex-col">
-            <label>Year</label>
-            <input type="number" placeholder="Enter first name" formControlName="year">
+        <div class="flex flex-col gap-2">
+            <label class="font-medium text-gray-700">Year</label>
+            <input type="number" placeholder="Enter year" formControlName="year"
+                class="rounded-lg border-2 border-gray-300 bg-white px-4 py-2 outline-none focus:border-amber-500" />
         </div>
 
-<div formArrayName="expenses">
-  <button type="button" (click)="addExpense()">Add expense</button>
+        <div formArrayName="expenses" class="flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800">Expenses</h3>
 
-  @for (expense of expenses.controls; track expense) {
-    <div [formGroupName]="$index">
-      <input type="text" formControlName="name" placeholder="Name">
+                <button type="button" (click)="addExpense()"
+                    class="rounded-lg bg-green-600 px-4 py-2 font-medium text-white hover:bg-green-700 hover:cursor-pointer">
+                    Add Expense
+                </button>
+            </div>
 
-      <input type="number" formControlName="value" placeholder="Amount">
+            @for (expense of expenses.controls; track expense) {
+            <div [formGroupName]="$index" class="grid grid-cols-4 gap-4 rounded-lg bg-white p-4 shadow-xl">
+                <input type="text" formControlName="name" placeholder="Name"
+                    class="rounded-lg border-2 border-gray-300 px-3 py-2 outline-none focus:border-amber-500" />
 
-      <input type="text" formControlName="month" placeholder="Month">
+                <input type="number" formControlName="value" placeholder="Amount"
+                    class="rounded-lg border-2 border-gray-300 px-3 py-2 outline-none focus:border-amber-500" />
 
-      <button type="button" (click)="deleteExpense($index)">Delete</button>
-    </div>
-  }
-</div>
+                <input type="text" formControlName="month" placeholder="Month"
+                    class="rounded-lg border-2 border-gray-300 px-3 py-2 outline-none focus:border-amber-500" />
 
-        <button type="submit">Submit</button>
+                <button type="button" (click)="deleteExpense($index)"
+                    class="rounded-lg bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600 hover:cursor-pointer">
+                    Delete
+                </button>
+            </div>
+            }
+        </div>
 
-        <button type="button" (click)="cancelForm()">Cancel</button>
+        <div class="flex justify-end gap-4">
+            <button type="button" (click)="resetForm()"
+                class="rounded-lg bg-gray-500 min-w-25 px-6 py-2 font-medium text-white hover:bg-gray-600 hover:cursor-pointer">
+                Reset
+            </button>
 
+            <button type="button" (click)="cancelForm()"
+                class="rounded-lg bg-red-500 min-w-25 px-6 py-2 font-medium text-white hover:bg-red-600 hover:cursor-pointer">
+                Cancel
+            </button>
+
+            <button type="submit" class="rounded-lg bg-blue-600 min-w-25 px-6 py-2 font-medium text-white hover:bg-blue-700 hover:cursor-pointer">
+                Submit
+            </button>
+        </div>
     </form>
+
 </div>

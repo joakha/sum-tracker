@@ -18,6 +18,10 @@ export class BudgetList implements OnInit {
 
   budgets = signal<Budget[]>([])
 
+  createBudget() {
+    this.router.navigateByUrl("create-budget");
+  }
+
   getBudgets() {
     this.budgetService.fetchBudgets().subscribe(res => {
       this.budgets.set(res)

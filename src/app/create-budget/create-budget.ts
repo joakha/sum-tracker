@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-budget',
@@ -10,6 +11,7 @@ import { BudgetService } from '../services/budget-service';
   styleUrl: './create-budget.css',
 })
 export class CreateBudget {
+  private router = inject(Router);
   budgetForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private budgetService: BudgetService) {
@@ -41,14 +43,19 @@ export class CreateBudget {
     this.expenses.removeAt(index);
   }
 
+  resetForm() {
+    this.budgetForm.reset();
+  }
+
+  cancelForm() {
+    this.router.navigateByUrl('');
+  }
+
   submitForm() {
     console.log(this.budgetForm.value);
     this.budgetService.createBudget(this.budgetForm.value).subscribe(res => {
       console.log("attempt made!")
+      this.router.navigateByUrl('');
     })
-  }
-
-  resetForm() {
-    this.budgetForm.reset();
   }
 }

@@ -78,6 +78,10 @@ export class EditBudget implements OnInit {
     })
   }
 
+  resetForm() {
+    this.budgetForm.reset();
+  }
+
   cancelForm() {
     this.router.navigateByUrl('');
   }

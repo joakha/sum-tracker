@@ -1,5 +1,11 @@
 <div class="flex flex-col flex-1 container mx-auto py-12 gap-6">
+  <div>
+    <button type="button" (click)="createBudget()" class="w-full rounded-lg bg-blue-600 px-6 py-2 font-medium text-white hover:bg-blue-700 hover:cursor-pointer">
+      Create a New Budget
+    </button>
+  </div>
   @for (budget of budgets(); track budget.id) {
-    <app-budget-row [budget]="budget" (editBudgetEmitter)="editBudget($event)" (deleteBudgetEmitter)="deleteBudget($event)"></app-budget-row>
+  <app-budget-row [budget]="budget" (editBudgetEmitter)="editBudget($event)"
+    (deleteBudgetEmitter)="deleteBudget($event)"></app-budget-row>
   }
 </div>
