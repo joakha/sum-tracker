@@ -7,19 +7,19 @@
       "year": 2024,
       "expenses": [
         {
-          "name": "Monthly Rent",
-          "value": 1200,
-          "month": null
-        },
-        {
-          "name": "Grocery Shopping",
-          "value": 450,
-          "month": null
-        },
-        {
           "name": "Utility Bills",
           "value": 320,
-          "month": null
+          "month": "june"
+        },
+        {
+          "name": "uu",
+          "value": 34,
+          "month": ""
+        },
+        {
+          "name": "tt",
+          "value": 67,
+          "month": ""
         }
       ]
     },
@@ -50,60 +50,19 @@
         {
           "name": "Oil Change",
           "value": 350,
-          "date": "2025-02-10"
-        },
-        {
-          "name": "Brake Replacement",
-          "value": 600,
-          "date": "2025-08-18"
+          "month": null
         },
         {
           "name": "Tire Rotation",
           "value": 180,
-          "date": "2025-11-03"
+          "month": null
+        },
+        {
+          "name": "ttt",
+          "value": 6666,
+          "month": ""
         }
       ]
-    },
-    {
-      "id": 4,
-      "title": "Education",
-      "total": 4000,
-      "year": 2026,
-      "expenses": [
-        {
-          "name": "Course Tuition",
-          "value": 950,
-          "date": "2026-01-15"
-        },
-        {
-          "name": "Study Materials",
-          "value": 700,
-          "date": "2026-06-01"
-        },
-        {
-          "name": "Online Learning Subscription",
-          "value": 400,
-          "date": "2026-09-10"
-        }
-      ]
-    },
-    {
-      "title": "juu",
-      "total": 3111,
-      "year": 2026,
-      "expenses": [
-        {
-          "name": "tt",
-          "value": "44",
-          "month": "june"
-        },
-        {
-          "name": "rr",
-          "value": "55",
-          "month": "march"
-        }
-      ],
-      "id": 5
     }
   ]
 }

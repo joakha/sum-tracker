@@ -1,0 +1,78 @@
+<div class="flex flex-col rounded-xl bg-amber-200 p-6 shadow-xl">
+
+    <!-- Main Details -->
+    <div class="flex justify-between mb-6">
+        <div class="flex flex-col gap-3">
+            <h2 class="text-2xl font-semibold text-gray-900">
+                {{ budget().title }}
+            </h2>
+            <p class="text-sm text-gray-500">
+                Budget year: {{ budget().year }}
+            </p>
+            <div class="rounded-lg bg-blue-50 px-4 py-2 text-center w-52">
+                <p class="text-xs font-medium uppercase text-blue-600">
+                    Total Budget:
+                    <span class="text-lg font-bold text-blue-900">
+                        {{ budget().total }}€
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-4 items-center">
+            <button
+                class="px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 hover:cursor-pointer"
+                type="button" (click)="editBudget(budget().id)">
+                Update
+            </button>
+            <button class="px-4 py-2 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 hover:cursor-pointer"
+                (click)="deleteBudget()">
+                Delete
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Expenses -->
+    <div>
+        <div>
+            <button type="button" (click)="showExpenses.set(!showExpenses())"
+                class="mb-3 flex w-full items-center justify-between">
+                <h3 class="text-md font-semibold text-gray-600">
+                    EXPENSES
+                </h3>
+
+                <span class="text-lg font-bold transition-transform duration-300" [class.rotate-180]="showExpenses()">
+                    ^
+                </span>
+            </button>
+        </div>
+
+        @if(showExpenses()) {
+        <div class="space-y-2">
+            @for (expense of budget().expenses; track expense.name) {
+            <div class="flex items-center justify-between rounded-lg bg-gray-50 px-4 py-3">
+
+                <div>
+                    <p class="text-sm text-gray-700">
+                        {{ expense.name }}
+                    </p>
+                </div>
+
+                <div>
+                    <p class="text-sm text-gray-700">
+                        {{ expense.month }}
+                    </p>
+                </div>
+
+                <div class="font-medium text-red-600">
+                    {{ expense.value }}€
+                </div>
+
+            </div>
+            }
+        </div>
+        }
+
+    </div>
+</div>

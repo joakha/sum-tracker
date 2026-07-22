@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteButton } from './delete-button';
+import { BudgetRow } from './budget-row';
 
-describe('DeleteButton', () => {
-  let component: DeleteButton;
-  let fixture: ComponentFixture<DeleteButton>;
+describe('BudgetRow', () => {
+  let component: BudgetRow;
+  let fixture: ComponentFixture<BudgetRow>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DeleteButton],
+      imports: [BudgetRow],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DeleteButton);
+    fixture = TestBed.createComponent(BudgetRow);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

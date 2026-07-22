@@ -1,12 +1,12 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { BudgetRow } from '../budget-row/budget-row';
 import { BudgetService } from '../services/budget-service';
 import type { Budget } from '../types';
-import { DeleteButton } from '../delete-button/delete-button';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-budget-list',
-  imports: [DeleteButton],
+  imports: [BudgetRow],
   templateUrl: './budget-list.html',
   styleUrl: './budget-list.css',
 })
