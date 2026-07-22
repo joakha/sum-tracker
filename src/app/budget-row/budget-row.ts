@@ -16,8 +16,8 @@ export class BudgetRow {
 
   showExpenses = signal<boolean>(false);
 
-  editBudget(budgetId: number) {
-    this.editBudgetEmitter.emit(budgetId);
+  editBudget() {
+    this.editBudgetEmitter.emit(this.budget().id);
   }
 
   deleteBudget() {
