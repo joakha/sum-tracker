@@ -7,13 +7,13 @@
       "year": 2026,
       "expenses": [
         {
-          "name": "Rent",
-          "value": 1200,
-          "month": "January"
-        },
-        {
           "name": "Groceries",
           "value": 420,
+          "month": "December"
+        },
+        {
+          "name": "Rent",
+          "value": 1200,
           "month": "January"
         },
         {
@@ -37,14 +37,14 @@
           "month": "June"
         },
         {
+          "name": "Holiday Shopping",
+          "value": 650,
+          "month": "August"
+        },
+        {
           "name": "Heating",
           "value": 140,
           "month": "November"
-        },
-        {
-          "name": "Holiday Shopping",
-          "value": 650,
-          "month": "December"
         }
       ]
     },

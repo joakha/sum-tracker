@@ -63,8 +63,6 @@ export class EditBudget implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.budgetId);
-
     this.budgetService.fetchBudget(this.budgetId).subscribe(res => {
       this.budgetForm.patchValue({
         id: res.id,
@@ -73,10 +71,16 @@ export class EditBudget implements OnInit {
         year: res.year,
       })
 
-      res.expenses.forEach(expense => {
-        this.expenses.push(this.createExistingExpense(expense))
-      })
+      months.forEach((month) => {
+        const monthlyExpenses = res.expenses
+          .filter((expense) => expense.month === month)
+          .sort((a, b) => a.name.localeCompare(b.name));
 
+        monthlyExpenses.forEach((expense) => {
+          this.expenses.push(this.createExistingExpense(expense))
+        })
+      })
+      
       this.cdr.markForCheck();
     })
   }

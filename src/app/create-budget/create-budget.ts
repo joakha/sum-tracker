@@ -57,9 +57,7 @@ export class CreateBudget {
   }
 
   submitForm() {
-    console.log(this.budgetForm.value);
     this.budgetService.createBudget(this.budgetForm.value).subscribe(res => {
-      console.log("attempt made!");
       this.router.navigateByUrl('');
     })
   }

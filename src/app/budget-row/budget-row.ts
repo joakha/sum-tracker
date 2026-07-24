@@ -1,6 +1,8 @@
-import { Component, inject, input, output, signal } from '@angular/core';
+import { Component, inject, input, OnInit, output, signal } from '@angular/core';
 import { Budget } from '../types';
 import { Router } from '@angular/router';
+import type { Expense } from '../types';
+import { months } from '../utils';
 
 @Component({
   selector: 'app-budget-row',
@@ -8,10 +10,12 @@ import { Router } from '@angular/router';
   templateUrl: './budget-row.html',
   styleUrl: './budget-row.css',
 })
-export class BudgetRow {
+export class BudgetRow implements OnInit {
   private router = inject(Router);
 
   budget = input.required<Budget>();
+
+  sortedExpenses = signal<Expense[]>([]);
 
   deleteBudgetEmitter = output<Budget>();
 
@@ -27,5 +31,21 @@ export class BudgetRow {
 
   deleteBudget() {
     this.deleteBudgetEmitter.emit(this.budget());
+  }
+
+  ngOnInit(): void {
+    const sortedExpenses: Expense[] = [];
+
+    months.forEach((month) => {
+      const monthlyExpenses = this.budget().expenses
+      .filter((expense) => expense.month === month)
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+      monthlyExpenses.forEach((expense) => {
+        sortedExpenses.push(expense);
+      })
+    })
+
+    this.sortedExpenses.set(sortedExpenses);
   }
 }
