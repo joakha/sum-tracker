@@ -19,6 +19,8 @@ export class EditBudget implements OnInit {
   readonly budgetId: number;
   budgetForm: FormGroup;
 
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
   constructor(private formBuilder: FormBuilder) {
     this.budgetId = Number(this.route.snapshot.paramMap.get('budgetId'));
 

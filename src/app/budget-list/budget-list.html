@@ -5,7 +5,6 @@
     </button>
   </div>
   @for (budget of budgets(); track budget.id) {
-  <app-budget-row [budget]="budget" (editBudgetEmitter)="editBudget($event)"
-    (deleteBudgetEmitter)="deleteBudget($event)"></app-budget-row>
+  <app-budget-row [budget]="budget" (deleteBudgetEmitter)="deleteBudget($event)"></app-budget-row>
   }
 </div>

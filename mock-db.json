@@ -1,86 +1,184 @@
 {
-  "Budgets": [
+  "budgets": [
     {
       "id": 1,
       "title": "Household Budget",
-      "total": 5000,
-      "year": 2024,
+      "total": 24000,
+      "year": 2026,
       "expenses": [
         {
-          "name": "Utility Bills",
-          "value": 320,
-          "month": "june"
+          "name": "Rent",
+          "value": 1200,
+          "month": "January"
         },
         {
-          "name": "uu",
-          "value": 34,
-          "month": ""
+          "name": "Groceries",
+          "value": 420,
+          "month": "January"
         },
         {
-          "name": "tt",
-          "value": 67,
-          "month": ""
+          "name": "Electricity",
+          "value": 95,
+          "month": "February"
+        },
+        {
+          "name": "Internet",
+          "value": 60,
+          "month": "March"
+        },
+        {
+          "name": "Water",
+          "value": 35,
+          "month": "April"
+        },
+        {
+          "name": "Insurance",
+          "value": 180,
+          "month": "June"
+        },
+        {
+          "name": "Heating",
+          "value": 140,
+          "month": "November"
+        },
+        {
+          "name": "Holiday Shopping",
+          "value": 650,
+          "month": "December"
         }
       ]
     },
     {
       "id": 2,
       "title": "Vacation Fund",
-      "total": 3000,
+      "total": 5000,
       "year": 2026,
       "expenses": [
         {
-          "name": "Hotel Booking",
-          "value": 800,
-          "date": "2026-04-12"
+          "name": "Flights",
+          "value": 850,
+          "month": "March"
+        },
+        {
+          "name": "Hotel Deposit",
+          "value": 600,
+          "month": "April"
         },
         {
           "name": "Travel Insurance",
-          "value": 250,
-          "date": "2026-05-20"
+          "value": 120,
+          "month": "May"
+        },
+        {
+          "name": "Excursions",
+          "value": 300,
+          "month": "July"
+        },
+        {
+          "name": "Dining",
+          "value": 450,
+          "month": "August"
         }
       ]
     },
     {
       "id": 3,
       "title": "Car Maintenance",
-      "total": 1500,
+      "total": 3000,
       "year": 2025,
       "expenses": [
         {
           "name": "Oil Change",
-          "value": 350,
-          "month": "LOOLL KEKW"
+          "value": 75,
+          "month": "January"
         },
         {
-          "name": "Tire Rotation",
-          "value": 180,
-          "month": null
+          "name": "New Tires",
+          "value": 680,
+          "month": "May"
         },
         {
-          "name": "ttt",
-          "value": 6666,
-          "month": ""
+          "name": "Brake Pads",
+          "value": 320,
+          "month": "September"
+        },
+        {
+          "name": "Car Wash",
+          "value": 25,
+          "month": "October"
         }
       ]
     },
     {
-      "title": "juu",
-      "total": 23,
-      "year": 2016,
+      "id": 4,
+      "title": "Business Expenses",
+      "total": 15000,
+      "year": 2026,
       "expenses": [
         {
-          "name": "iiii",
-          "value": 2222,
+          "name": "Software Licenses",
+          "value": 900,
+          "month": "January"
+        },
+        {
+          "name": "Office Supplies",
+          "value": 210,
+          "month": "February"
+        },
+        {
+          "name": "Cloud Hosting",
+          "value": 450,
+          "month": "April"
+        },
+        {
+          "name": "Conference",
+          "value": 1800,
+          "month": "September"
+        },
+        {
+          "name": "Marketing",
+          "value": 1200,
+          "month": "October"
+        },
+        {
+          "name": "Client Dinner",
+          "value": 320,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Home Renovation",
+      "total": 12000,
+      "year": 2025,
+      "expenses": [
+        {
+          "name": "Paint",
+          "value": 350,
+          "month": "February"
+        },
+        {
+          "name": "Flooring",
+          "value": 2400,
+          "month": "March"
+        },
+        {
+          "name": "Kitchen Cabinets",
+          "value": 4100,
           "month": "June"
         },
         {
-          "name": "kkkk",
-          "value": 33,
-          "month": "March"
+          "name": "Lighting",
+          "value": 780,
+          "month": "August"
+        },
+        {
+          "name": "Furniture",
+          "value": 2200,
+          "month": "December"
         }
-      ],
-      "id": 4
+      ]
     }
   ]
 }

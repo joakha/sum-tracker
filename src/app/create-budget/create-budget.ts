@@ -12,9 +12,13 @@ import { Router } from '@angular/router';
 })
 export class CreateBudget {
   private router = inject(Router);
+  private budgetService = inject(BudgetService);
+
   budgetForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private budgetService: BudgetService) {
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  constructor(private formBuilder: FormBuilder) {
     this.budgetForm = this.formBuilder.group({
       title: [''],
       total: [''],
@@ -24,7 +28,7 @@ export class CreateBudget {
   }
 
   get expenses(): FormArray {
-    return this.budgetForm.get("expenses") as FormArray
+    return this.budgetForm.get("expenses") as FormArray;
   }
 
   createExpense(): FormGroup {
@@ -54,7 +58,7 @@ export class CreateBudget {
   submitForm() {
     console.log(this.budgetForm.value);
     this.budgetService.createBudget(this.budgetForm.value).subscribe(res => {
-      console.log("attempt made!")
+      console.log("attempt made!");
       this.router.navigateByUrl('');
     })
   }

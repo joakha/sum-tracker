@@ -13,8 +13,7 @@ import { Router } from '@angular/router';
 
 export class BudgetList implements OnInit {
   private router = inject(Router);
-
-  constructor(private budgetService: BudgetService) { }
+  private budgetService = inject(BudgetService)
 
   budgets = signal<Budget[]>([])
 
@@ -26,10 +25,6 @@ export class BudgetList implements OnInit {
     this.budgetService.fetchBudgets().subscribe(res => {
       this.budgets.set(res)
     })
-  }
-
-  editBudget(budgetId: number) {
-    this.router.navigate(['edit-budget', budgetId]);
   }
 
   deleteBudget(budget: Budget) {

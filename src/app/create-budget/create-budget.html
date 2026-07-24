@@ -41,8 +41,17 @@
                 <input type="number" formControlName="value" placeholder="Amount"
                     class="rounded-lg border-2 border-gray-300 px-3 py-2 outline-none focus:border-amber-500" />
 
-                <input type="text" formControlName="month" placeholder="Month"
-                    class="rounded-lg border-2 border-gray-300 px-3 py-2 outline-none focus:border-amber-500" />
+                <select formControlName="month"
+                    class="rounded-lg border-2 border-gray-300 px-3 py-2 outline-none focus:border-amber-500">
+                    <option value="" disabled selected>Select Month</option>
+
+                    @for (month of months; track month) {
+                    <option [value]="month">
+                        {{ month }}
+                    </option>
+                    }
+                </select>
+
 
                 <button type="button" (click)="deleteExpense($index)"
                     class="rounded-lg bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600 hover:cursor-pointer">
@@ -63,7 +72,8 @@
                 Cancel
             </button>
 
-            <button type="submit" class="rounded-lg bg-blue-600 min-w-25 px-6 py-2 font-medium text-white hover:bg-blue-700 hover:cursor-pointer">
+            <button type="submit"
+                class="rounded-lg bg-blue-600 min-w-25 px-6 py-2 font-medium text-white hover:bg-blue-700 hover:cursor-pointer">
                 Submit
             </button>
         </div>
