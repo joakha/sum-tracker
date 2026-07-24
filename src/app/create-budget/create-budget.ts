@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget-service';
 import { Router } from '@angular/router';
+import { months } from '../utils';
 
 @Component({
   selector: 'app-create-budget',
@@ -14,9 +15,9 @@ export class CreateBudget {
   private router = inject(Router);
   private budgetService = inject(BudgetService);
 
-  budgetForm: FormGroup;
+  monthOptions = months;
 
-  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  budgetForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.budgetForm = this.formBuilder.group({

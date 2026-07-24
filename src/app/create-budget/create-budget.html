@@ -45,7 +45,7 @@
                     class="rounded-lg border-2 border-gray-300 px-3 py-2 outline-none focus:border-amber-500">
                     <option value="" disabled selected>Select Month</option>
 
-                    @for (month of months; track month) {
+                    @for (month of monthOptions; track month) {
                     <option [value]="month">
                         {{ month }}
                     </option>

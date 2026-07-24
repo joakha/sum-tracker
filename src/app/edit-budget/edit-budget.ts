@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget-service';
 import { Expense } from '../types';
+import { months } from '../utils';
 
 @Component({
   selector: 'app-edit-budget',
@@ -19,7 +20,7 @@ export class EditBudget implements OnInit {
   readonly budgetId: number;
   budgetForm: FormGroup;
 
-  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  monthOptions = months;
 
   constructor(private formBuilder: FormBuilder) {
     this.budgetId = Number(this.route.snapshot.paramMap.get('budgetId'));
@@ -89,7 +90,7 @@ export class EditBudget implements OnInit {
   }
 
   submitForm() {
-    this.budgetService.editBudget(this.budgetId, this.budgetForm.value).subscribe(res => {
+    this.budgetService.editBudget(this.budgetId, this.budgetForm.value).subscribe(_res => {
       this.router.navigateByUrl('');
     })
   }
